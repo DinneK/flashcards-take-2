@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Round = require("../src/Round");
 const Deck = require("../src/Deck");
 const Card = require("../src/Card");
-const Turn = require("../src/Turn");
+const Game = require("../src/Game");
 
 describe("Round", () => {
   let card1, card2, card3, deck, round;
@@ -33,11 +33,7 @@ describe("Round", () => {
 
     round = new Round(deck);
 
-    // guess1 = "pug";
-    // guess2 = "sloth";
-
-    // turn1 = new Turn(guess1, card1);
-    // turn2 = new Turn(guess2, card2);
+    game = new Game();
   });
 
   it("should be function", () => {
@@ -88,7 +84,7 @@ describe("Round", () => {
     });
   });
 
-  it("should take turn and increment the turns", function () {
+  it("should take turn and increment the turns", () => {
     round.takeTurn();
     round.takeTurn();
     round.takeTurn();
@@ -100,17 +96,17 @@ describe("Round", () => {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it("should evaluate correct guess", function () {
+  it("should evaluate correct guess", () => {
     round.takeTurn("gallbladder");
     expect(round.takeTurn("gallbladder")).to.equal("Correct!");
   });
 
-  it("should evaluate incorrect guess", function () {
+  it("should evaluate incorrect guess", () => {
     round.takeTurn("manatee");
     expect(round.takeTurn()).to.equal("Incorrect!");
   });
 
-  it("should store incorrect guess", function () {
+  it("should store incorrect guess", () => {
     round.takeTurn("guess");
     expect(round.incorrectGuesses.length).to.equal(1);
 
@@ -121,7 +117,7 @@ describe("Round", () => {
     expect(round.incorrectGuesses.length).to.equal(2);
   });
 
-  it("should calculate the correct percentage", function () {
+  it("should calculate the correct percentage", () => {
     round.takeTurn("sea otter");
     round.takeTurn("manatee");
     round.takeTurn("manatee");
@@ -130,7 +126,7 @@ describe("Round", () => {
     expect(round.calculatePercentCorrect()).to.equal(33.33);
   });
 
-  it("should end the round", function () {
+  it("should end the round", () => {
     round.takeTurn("sea otter");
     round.takeTurn("manatee");
     round.takeTurn("manatee");

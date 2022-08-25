@@ -8,12 +8,9 @@
 ## Extensions
  - Project Board
  - Timer
- - 
 
 ## GIF
-  ![Flash Card Solo Project](https://user-images.githubusercontent.com/63877492/178082323-b8809729-f448-4c34-8176-b62bd9e283b3.gif)
-
-  ![Flash Cards 2.0]()
+  ![Flash Cards 2.0](https://user-images.githubusercontent.com/63877492/186776290-c10f47d6-8614-49ff-a3ad-81531e0806ef.gif)
 
 ## Set Up
 1. Fork this repo  

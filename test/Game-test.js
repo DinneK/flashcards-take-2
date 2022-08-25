@@ -3,22 +3,22 @@ const expect = chai.expect;
 
 const Game = require("../src/Game");
 
-describe("Game", function () {
+describe("Game", () => {
   let game;
 
   beforeEach(() => {
     game = new Game();
   });
 
-  it("should be a function", function () {
+  it("should be a function", () => {
     expect(Game).to.be.a("function");
   });
 
-  it("should be an instance of Game", function () {
+  it("should be an instance of Game", () => {
     expect(game).to.be.an.instanceof(Game);
   });
 
-  it("should create new cards", function () {
+  it("should create new cards", () => {
     expect(game.createCards()).to.have.lengthOf(30);
     expect(game.createCards()).to.be.an("array");
     expect(game.createCards().find((card) => card.cardID === 1)).to.deep.equal({
@@ -30,7 +30,7 @@ describe("Game", function () {
     });
   });
 
-  it("should create a new deck", function () {
+  it("should create a new deck", () => {
     expect(game.createDeck()).to.be.an("object");
     expect(game.createDeck()).to.deep.equal(game.deck);
     expect(
@@ -44,7 +44,7 @@ describe("Game", function () {
     });
   });
 
-  it("should make a new game", function () {
+  it("should make a new game", () => {
     expect(game.makeANewRound()).to.be.an("object");
     expect(
       game.makeANewRound().deck.find((card) => card.cardID === 9)
